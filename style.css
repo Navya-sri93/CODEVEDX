@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050816;
+    color: white;
+    min-height: 100vh;
+}
+
+/* ===================== */
+/* NAVBAR */
+/* ===================== */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: #050816;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: #7837c8;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #7837c8;
+}
+
+/* ===================== */
+/* HERO SECTION */
+/* ===================== */
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    gap: 50px;
+}
+
+.hero-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-left h3 {
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+.hero-left h1 {
+    font-size: 4rem;
+    color: #7837c8;
+    margin-bottom: 15px;
+}
+
+/* GOALS / TAGLINE STYLING */
+.hero-goals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.hero-goals span {
+    background: rgba(0, 255, 179, 0.1);
+    border: 1px solid rgba(0, 255, 179, 0.3);
+    color: #7837c8;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.hero-goals span:hover {
+    background: rgba(0, 255, 179, 0.2);
+    border-color: #7837c8;
+    box-shadow: 0 0 15px rgba(0, 255, 179, 0.3);
+}
+
+.hero-left p {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* PROFILE IMAGE - RIGHT TOP TO MIDDLE */
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 0;
+}
+
+.hero-right img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #7837c8;
+    box-shadow:
+        0 0 25px #7837c8,
+        0 0 60px rgba(0, 255, 179, 0.4);
+    transition: 0.5s;
+    position: sticky;
+    top: 120px;
+}
+
+.hero-right img:hover {
+    transform: scale(1.05);
+}
+
+/* ===================== */
+/* BUTTON - 2.5x LARGER */
+/* ===================== */
+
+.btn {
+    display: inline-block;
+    padding: 20px 55px;
+    background: #7837c8;
+    color: #050816;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.15rem;
+    border-radius: 12px;
+    transition: 0.3s;
+    margin-bottom: 30px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px #7837c8;
+}
+
+/* KNOW MORE BUTTON - SPECIFIC LARGER SIZE */
+.btn-large {
+    padding: 24px 65px;
+    font-size: 1.25rem;
+    border-radius: 14px;
+}
+
+/* ===================== */
+/* SOCIAL ICONS - CENTERED LAST LINE */
+/* ===================== */
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 32px;
+    transition: 0.4s;
+}
+
+.social-icons a:hover {
+    color: #7837c8;
+    transform: translateY(-5px);
+    text-shadow:
+        0 0 10px #7837c8,
+        0 0 20px#7837c8;
+}
+
+/* ===================== */
+/* CONTAINER */
+/* ===================== */
+
+.container {
+    width: 85%;
+    margin: auto;
+    padding: 70px 0;
+}
+
+.container h1 {
+    color: #7837c8;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 3rem;
+}
+
+.container h2 {
+    color: #7837c8;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* ===================== */
+/* CARDS */
+/* ===================== */
+
+.card {
+    background: #0f172a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #7837c8;
+    box-shadow: 0 10px 25px rgba(0, 255, 179, 0.15);
+}
+
+.card p {
+    color: #cbd5e1;
+    line-height: 1.8;
+}
+
+/* ===================== */
+/* GRID */
+/* ===================== */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* ===================== */
+/* PROJECTS */
+/* ===================== */
+
+.project-img{
+    width:100%;
+    height:auto;
+
+    border-radius:10px;
+
+    border:2px solid rgba(255,255,255,0.08);
+
+    transition:0.3s;
+}
+
+.project-img:hover{
+    transform:scale(1.02);
+}
+
+.card h2 {
+    margin-top: 10px;
+}
+
+/* ===================== */
+/* CONTACT */
+/* ===================== */
+
+.contact-card {
+    text-align: center;
+}
+
+.contact-card h3 {
+    color: #7837c8;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    color: #cbd5e1;
+}
+
+/* ===================== */
+/* FOOTER */
+/* ===================== */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+}
+
+/* ===================== */
+/* SCROLLBAR */
+/* ===================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050816;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cb03ad;
+    border-radius: 20px;
+}
+
+/* ===================== */
+/* MOBILE */
+/* ===================== */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 50px 8%;
+    }
+
+    .hero-left h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-right {
+        justify-content: center;
+    }
+
+    .hero-right img {
+        width: 250px;
+        height: 250px;
+        position: static;
+    }
+
+    .hero-goals {
+        justify-content: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .container h1 {
+        font-size: 2.2rem;
+    }
+
+    .btn {
+        padding: 16px 40px;
+        font-size: 1rem;
+    }
+
+    .btn-large {
+        padding: 18px 45px;
+        font-size: 1.1rem;
+    }
+}
