@@ -1,0 +1,224 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #141e30, #243b55);
+    --calc-bg: rgba(30, 41, 59, 0.7);
+    --display-bg: rgba(15, 23, 42, 0.6);
+    --btn-num-bg: #334155;
+    --btn-num-hover: #475569;
+    --btn-op-bg: #f97316;
+    --btn-op-hover: #ea580c;
+    --btn-act-bg: #4b5563;
+    --btn-act-hover: #6b7280;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    overflow: hidden;
+}
+
+/* Container wraps both Calculator and History for seamless layout */
+.calculator-container {
+    position: relative;
+    display: flex;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.calculator {
+    width: 360px;
+    background: var(--calc-bg);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    z-index: 2;
+}
+
+.calc-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+#history-toggle {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+#history-toggle:hover {
+    color: var(--text-main);
+}
+
+/* Display Styling */
+.display {
+    background: var(--display-bg);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    word-wrap: break-word;
+    word-break: break-all;
+    min-height: 110px;
+    margin-bottom: 20px;
+}
+
+.previous-operand {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    min-height: 24px;
+}
+
+.current-operand {
+    color: var(--text-main);
+    font-size: 2.3rem;
+    font-weight: 600;
+}
+
+/* CSS GRID FOR BUTTONS */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    border: none;
+    border-radius: 12px;
+    height: 60px;
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: var(--text-main);
+    background-color: var(--btn-num-bg);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.btn:hover {
+    background-color: var(--btn-num-hover);
+    transform: scale(1.02);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn.operator {
+    background-color: var(--btn-op-bg);
+}
+
+.btn.operator:hover {
+    background-color: var(--btn-op-hover);
+}
+
+.btn.action {
+    background-color: var(--btn-act-bg);
+}
+
+.btn.action:hover {
+    background-color: var(--btn-act-hover);
+}
+
+.btn.equals {
+    background-color: var(--btn-op-bg);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+/* History Sliding Panel Layout */
+.history-panel {
+    position: absolute;
+    top: 0;
+    right: -320px; /* Hidden off-screen right by default */
+    width: 320px;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(15px);
+    z-index: 1;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Active Class applied via JS to slide out */
+.history-panel.open {
+    right: 0;
+    position: relative; /* Integrates into layout alongside calc when open */
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-main);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+#clear-history {
+    background: none;
+    border: none;
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.history-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.history-item {
+    text-align: right;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.history-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.hist-expr {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.hist-res {
+    color: var(--text-main);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.empty-history-msg {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    text-align: center;
+    margin-top: 40px;
+}

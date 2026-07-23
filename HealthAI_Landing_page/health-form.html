@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Assessment - HealthAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">HealthAI</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="health-form.html">Health Check</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <section class="page">
+
+        <h1>Health Assessment Form</h1>
+
+        <div class="contact-form">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Full Name"
+            >
+
+            <input
+                type="number"
+                id="height"
+                placeholder="Height (cm)"
+            >
+
+            <input
+                type="number"
+                id="weight"
+                placeholder="Weight (kg)"
+            >
+
+            <button
+                class="btn"
+                onclick="calculateBMI()"
+            >
+                Analyze Health
+            </button>
+
+        </div>
+
+        <div class="about-box">
+
+            <h2>Health Report</h2>
+
+            <p id="username">
+                Name: -
+            </p>
+
+            <p id="bmiResult">
+                BMI: -
+            </p>
+
+            <p id="statusResult">
+                Status: -
+            </p>
+
+            <p id="recommendation">
+                Recommendation: -
+            </p>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 HealthAI. All Rights Reserved.</p>
+    </footer>
+
+    <script src="health.js"></script>
+
+</body>
+</html>
